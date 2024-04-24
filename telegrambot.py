@@ -32,7 +32,7 @@ def on_message(ws, message):
         'm']  # False if the buyer is the taker (buy order), True if the seller is the maker (sell order)
 
     # Define what you consider a "whale" transaction; here we assume any trade over 5 BTC
-    whale_threshold = 5.0
+    whale_threshold = 2.0
     if not is_buyer_maker and quantity >= whale_threshold:
       alert_message = f"🐋 BUY WHALE DETECTED [{quantity:.2f}] BTC at price {price}"
       print(alert_message)
